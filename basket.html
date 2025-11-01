@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="w-full border-b text-sm text-gray-600">
+      <div
+        class="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-4 py-2"
+      >
+        <div class="flex flex-wrap items-center gap-4">
+          <div class="flex items-center gap-1">
+            <span>Город</span>
+            <a href="#" class="text-blue-600 hover:underline">Ташкент</a>
+          </div>
+
+          <a
+            href="#"
+            class="text-blue-600 hover:underline flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 3v2.25M15.75 3v2.25M3 7.5h18M4.5 21h15A1.5 1.5 0 0021 19.5V7.5H3v12A1.5 1.5 0 004.5 21z"
+              />
+            </svg>
+            Продавайте на Zon.uz
+          </a>
+
+          <div class="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 13.5V9a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4.5M6 19.5h12a2.25 2.25 0 0 0 2.25-2.25V9.75A2.25 2.25 0 0 0 18 7.5H6a2.25 2.25 0 0 0-2.25 2.25v7.5A2.25 2.25 0 0 0 6 19.5z"
+              />
+            </svg>
+            <span>Покупать как юрлицо</span>
+          </div>
+
+          <div class="hidden md:flex items-center gap-2">
+            <a href="#" class="hover:text-blue-600">Помощь</a>
+            <a href="#" class="hover:text-blue-600">Контакты</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 text-blue-600"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 6.75l8.954 4.905a2.25 2.25 0 002.092 0L22.25 6.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25v-9A2.25 2.25 0 0019.5 6h-15A2.25 2.25 0 002.25 8.25v9A2.25 2.25 0 004.5 19.5z"
+            />
+          </svg>
+          <a
+            href="tel:+998785553500"
+            class="text-gray-800 font-medium hover:text-blue-600"
+            >+998-78 555-35-00</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <nav class="w-full">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 gap-4 flex-wrap md:flex-nowrap"
+      >
+        <div class="flex items-center gap-4">
+          <img src="./image/zon.uz.png" alt="Logo" class="h-8" />
+          <button
+            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm hover:bg-blue-100"
+          >
+            <span><img src="./image/katalog.png" alt="" /></span>Каталог
+          </button>
+        </div>
+
+        <div class="flex-1 flex items-center max-w-3xl w-full">
+          <input
+            type="text"
+            placeholder="Найти товары"
+            class="flex-1 px-4 py-2 rounded-l-[10px] text-sm text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            class="bg-gray-300 text-gray-700 px-4 py-[7px] mb-[-1px] rounded-r-lg hover:bg-gray-400"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button class="relative hover:text-blue-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 2.25h2.25l1.5 12.75h13.5l1.5-9H6M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+              />
+            </svg>
+          </button>
+
+          <div class="flex items-center gap-3 text-gray-400">
+            <div class="bg-">
+              <i class="fa-solid text-black fa-earth-americas"> RU</i>
+            </div>
+            <div class="">
+              <i class="fa-regular color-black fa-question"></i>
+            </div>
+            <div class="">
+              <img src="./image/Item menu.svg" alt="" />
+            </div>
+          </div>
+
+          <button
+            class="bg-[#4668FF] hover:bg-[#3350e0] text-white px-4 py-2 rounded-lg text-sm font-medium"
+          >
+            Войти
+          </button>
+        </div>
+      </div>
+    </nav>
+    <footer class="bg-white border-t border-gray-200 text-sm text-gray-700">
+      <div
+        class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2"
+      >
+        <div class="border border-gray-300 p-6">
+          <h3 class="font-semibold mb-2 text-gray-800">Контакты</h3>
+          <ul class="space-y-1">
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">Call-центр</a>
+            </li>
+            <li>+998 78 555-35-00</li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">Эл. почта</a>
+            </li>
+            <li>info@zon.uz</li>
+            <li class="mt-2 font-medium">График работы</li>
+            <li>Будние: с 09:00 до 18:00</li>
+            <li>Суббота: с 09:00 до 18:00</li>
+          </ul>
+        </div>
+
+        <div class="">
+          <div class="border border-gray-300 p-6 items-center space-x-3 mb-3">
+            <h3 class="font-semibold mb-2 text-gray-800">
+              Мы в социальных сетях
+            </h3>
+            <div class="flex justify-between">
+              <a href="https://telegram.org/"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/512px-Telegram_2019_Logo.svg.png"
+                  alt="Telegram"
+                  class="w-6 h-6"
+              /></a>
+              <a href="https://www.youtube.com/"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"
+                  alt="YouTube"
+                  class="w-8 h-6"
+              /></a>
+              <a href="https://www.instagram.com/"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                  alt="Instagram"
+                  class="w-6 h-6"
+              /></a>
+              <a href="https://www.facebook.com/"
+                ><img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                  alt="Facebook"
+                  class="w-6 h-6"
+              /></a>
+            </div>
+          </div>
+          <div class="border border-gray-300 p-6 items-center space-x-3 mb-2">
+            <div class="flex">
+              <img
+                src="https://api.logobank.uz/media/logos_png/payme-01.png"
+                alt="Payme"
+                class="w-[40%] h-[40%]"
+              />
+              <img
+                src="https://api.logobank.uz/media/logos_png/Click-01_hjB080W.png"
+                alt="Click"
+                class="w-[40%] h-[40%]"
+              />
+            </div>
+            <p class="text-xs text-gray-500">
+              Интернет магазин zon.uz 2017–2024.<br />Все права защищены.
+            </p>
+          </div>
+        </div>
+
+        <div class="border border-gray-300 p-6">
+          <h3 class="font-semibold mb-2 text-gray-800">Компания</h3>
+          <ul class="space-y-1 text-blue-600">
+            <li><a href="#" class="hover:text-blue-600">О нас</a></li>
+            <li><a href="#" class="hover:text-blue-600">Реквизиты</a></li>
+            <li><a href="#" class="hover:text-blue-600">Контакты</a></li>
+            <li><a href="#" class="hover:text-blue-600">Вакансии</a></li>
+            <li><a href="#" class="hover:text-blue-600">Карта сайта</a></li>
+            <li>
+              <a href="#" class="hover:text-blue-600">Публичная оферта</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-300 p-6">
+          <h3 class="font-semibold text-gray-800">Помощь</h3>
+          <ul class="space-y-1 text-blue-600">
+            <li>
+              <a href="#" class="hover:text-blue-600">Вопросы и ответы</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-600">Условия рассрочки</a>
+            </li>
+            <li><a href="#" class="hover:text-blue-600">Способы оплаты</a></li>
+            <li><a href="#" class="hover:text-blue-600">Доставка</a></li>
+            <li><a href="#" class="hover:text-blue-600">Возврат товара</a></li>
+            <li>
+              <a href="#" class="hover:text-blue-600">Сервисные центры</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>
