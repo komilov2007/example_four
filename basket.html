@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel</title>
+    <title>Savat</title>
     <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
@@ -154,6 +154,17 @@
         </div>
       </div>
     </nav>
+    <header
+      class="max-w-7xl mx-auto px-4 py-8 p-4 bg-white shadow flex justify-between items-center"
+    >
+      <h1 class="text-xl font-semibold">🛒 Savatcha</h1>
+      <a href="index.html" class="text-blue-600">Orqaga</a>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 p-4">
+      <div class="cart-container grid gap-4"></div>
+      <div class="mt-4 text-right font-bold text-lg total-price"></div>
+    </main>
     <footer class="bg-white border-t border-gray-200 text-sm text-gray-700">
       <div
         class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2"
@@ -260,6 +271,6 @@
       </div>
     </footer>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./admin.js"></script>
+    <script src="./basket.js"></script>
   </body>
 </html>

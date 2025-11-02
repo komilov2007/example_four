@@ -1,227 +1,159 @@
-fetch('https://68fa0502ef8b2e621e7e795f.mockapi.io/api/product')
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+const sections = [
+  {
+    title: 'zlvbsa',
+    url: 'https://68fa0502ef8b2e621e7e795f.mockapi.io/api/product',
+    container: document.querySelector('.bnn'),
+  },
+  {
+    title: 'Популярные',
+    url: 'https://6905db6eee3d0d14c133f2d2.mockapi.io/api/product',
+    container: document.querySelector('.popular-container'),
+  },
+  {
+    title: 'Бестселлеры',
+    url: 'https://68fa0502ef8b2e621e7e795f.mockapi.io/api/product-threteen',
+    container: document.querySelector('.bestseller-container'),
+  },
+  {
+    title: 'Новинки',
+    url: 'https://6905db6eee3d0d14c133f2d2.mockapi.io/api/productNovinki',
+    container: document.querySelector('.novinki-container'),
+  },
+  {
+    title: 'Товары со скидкой',
+    url: 'https://6905e8e9ee3d0d14c1341a42.mockapi.io/api/tovar',
+    container: document.querySelector('.tovar'),
+  },
+];
 
-const cards = document.querySelector('.cards');
+async function fetchProducts(url) {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error('API xato:', err);
+    return [];
+  }
+}
 
-fetch('https://68fa0502ef8b2e621e7e795f.mockapi.io/api/product')
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((item) => {
-      cards.innerHTML += `<div class="flex flex-wrap gap-[px] ">
-  <div
-    class="bg-white rounded-[2px] border border-[#e6e6e6] shadow-md hover:shadow-lg transition w-full h-[380px] flex flex-col"
-  >
-    <div class="h-[250px] relative">
-      <i class="fa-regular fa-heart absolute top-2 right-2 text-gray-600 bg-white p-2 rounded-full"></i>
-      <img
-        src="${item.image}"
-        alt="Mahsulot rasmi"
-        class="w-[80%] h-[80%] ml-[10%] object-cover"
-      />
-    </div>
+function renderProducts(container, products) {
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  container.innerHTML = '';
 
-    <div class="flex flex-col flex-1 justify-between">
-      <div>
-        <h3 class="text-[14px] font-medium text-gray-800 text-center">
-          ${item.name}
-        </h3>
-       
-      </div>
- <div class="flex">
-        
- <p class="text-center ml-[10%] font-semibold text-l ">
-          ${item.price} so'm
-        </p>
-        <img
-        class="w-[45px] ml-[10%] mb-[10px] color-blue  text-white rounded-lg text-sm border rounded-[50%] p-[10px]  hover:bg-blue-200 transition" src="${item.button}"
-     / >
-      </div>
-     
-       
-      
-    </div>
-  </div>
-</div>`;
+  products.forEach((p) => {
+    const liked = favorites.some((f) => f.id === p.id);
+
+    const card = document.createElement('div');
+    card.className =
+      'relative bg-white rounded-xl shadow p-3 text-center hover:shadow-lg transition flex flex-col justify-between';
+
+    card.innerHTML = `
+      <button 
+        class="heart-btn absolute top-2 right-2 text-gray-400 text-xl bg-white p-2 rounded-full shadow hover:scale-110 transition"
+        data-id="${p.id}">
+        <i class="fa-heart ${
+          liked ? 'fa-solid text-red-500' : 'fa-regular'
+        }"></i>
+      </button>
+
+      <img src="${p.image || p.img}" alt="${
+      p.name
+    }" class="w-full h-40 object-contain mb-2" />
+      <h4 class="text-sm font-medium mb-1">${p.name}</h4>
+      <p class="text-gray-600 mb-2">${p.price || 'Narx yo‘q'} so‘m</p>
+      <button 
+        data-id="${p.id}" 
+        class="buy-btn bg-gray-600 text-white py-1 rounded hover:bg-blue-700 transition">
+        Savatchaga
+      </button>
+    `;
+    container.appendChild(card);
+  });
+
+  container.querySelectorAll('.buy-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const id = e.target.dataset.id;
+      const product = products.find((p) => p.id == id);
+      addToCart(product);
     });
-  })
-  .catch((error) => console.log('xato', error));
+  });
 
-// sdzfxcgvhbjn
-
-fetch('https://68fa0502ef8b2e621e7e795f.mockapi.io/api/product-threteen')
-  .then((res) => res.json())
-  .then((data2) => console.log(data2));
-
-const card30 = document.querySelector('.card30');
-
-fetch('https://68fa0502ef8b2e621e7e795f.mockapi.io/api/product-threteen')
-  .then((res) => res.json())
-  .then((data2) => {
-    data2.forEach((item) => {
-      card30.innerHTML += `<div class="flex flex-wrap gap-[px] ">
-  <div
-    class="bg-white rounded-[2px] border border-[#e6e6e6] shadow-md hover:shadow-lg transition w-full h-[380px] flex flex-col"
-  >
-    <div class="h-[250px] relative">
-      <i class="fa-regular fa-heart absolute top-2 right-2 text-gray-600 bg-white p-2 rounded-full"></i>
-      <img
-        src="${item.image}"
-        alt="Mahsulot rasmi"
-        class="w-[80%] h-[80%] ml-[10%] object-cover"
-      />
-    </div>
-
-    <div class="flex flex-col flex-1 justify-between">
-      <div>
-        <h3 class="text-[14px] font-medium text-gray-800 text-center">
-          ${item.name}
-        </h3>
-       
-      </div>
- <div class="flex">
-        
- <p class="text-center ml-[10%] font-semibold text-l ">
-          ${item.price} so'm
-        </p>
-        <img
-        class="w-[45px] ml-[10%] mb-[10px] color-blue  text-white rounded-lg text-sm border rounded-[50%] p-[10px]  hover:bg-blue-200 transition" src="${item.button}"
-     / >
-      </div>
-     
-       
-      
-    </div>
-  </div>
-</div>`;
+  container.querySelectorAll('.heart-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      const product = products.find((p) => p.id == id);
+      toggleFavorite(product, btn);
     });
-  })
-  .catch((error) => console.log('xato', error));
+  });
+}
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existing = cart.find((item) => item.id === product.id);
 
-fetch('https://6905db6eee3d0d14c133f2d2.mockapi.io/api/product')
-  .then((res) => res.json())
-  .then((data2) => console.log(data2));
-
-const novinki = document.querySelector('.novinki');
-
-fetch('https://6905db6eee3d0d14c133f2d2.mockapi.io/api/product')
-  .then((res) => res.json())
-  .then((data3) => {
-    data3.forEach((item) => {
-      novinki.innerHTML += `<div class="flex flex-wrap gap-[px] ">
-  <div
-    class="bg-white rounded-[2px] border border-[#e6e6e6] shadow-md hover:shadow-lg transition w-full h-[380px] flex flex-col"
-  >
-    <div class="h-[250px] relative">
-      <i class="fa-regular fa-heart absolute top-2 right-2 text-gray-600 bg-white p-2 rounded-full"></i>
-      <img
-        src="${item.image}"
-        alt="Mahsulot rasmi"
-        class="w-[80%] h-[80%] ml-[10%] object-cover"
-      />
-    </div>
-
-    <div class="flex flex-col flex-1 justify-between">
-      <div>
-        <h3 class="text-[14px] font-medium text-gray-800 text-center">
-          ${item.name}
-        </h3>
-       
-      </div>
- <div class="flex">
-        
- <p class="text-center ml-[10%] font-semibold text-l ">
-          ${item.price} so'm
-        </p>
-        <img
-        class="w-[45px] ml-[10%] mb-[10px] color-blue  text-white rounded-lg text-sm border rounded-[50%] p-[10px]  hover:bg-blue-200 transition" src="${item.button}"
-     / >
-      </div>
-     
-       
-      
-    </div>
-  </div>
-</div>`;
+  if (existing) existing.quantity += 1;
+  else {
+    cart.push({
+      id: product.id,
+      title: product.name,
+      price: product.price || 0,
+      img: product.image || product.img,
+      quantity: 1,
     });
-  })
-  .catch((error) => console.log('xato', error));
+  }
 
-fetch('https://6905db6eee3d0d14c133f2d2.mockapi.io/api/productNovinki')
-  .then((res) => res.json())
-  .then((data2) => console.log(data2));
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  showToast(`${product.name} savatchaga qo‘shildi 🛒`);
+}
 
-const tovar = document.querySelector('.tovar');
+function toggleFavorite(product, btn) {
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const exists = favorites.find((item) => item.id === product.id);
 
-fetch('https://6905db6eee3d0d14c133f2d2.mockapi.io/api/productNovinki')
-  .then((res) => res.json())
-  .then((data2) => {
-    data2.forEach((item) => {
-      tovar.innerHTML += `<div class="flex flex-wrap gap-[px] ">
-  <div
-    class="bg-white rounded-[2px] border border-[#e6e6e6] shadow-md hover:shadow-lg transition w-full h-[380px] flex flex-col"
-  >
-    <div class="h-[250px] relative">
-      <i class="fa-regular fa-heart absolute top-2 right-2 text-gray-600 bg-white p-2 rounded-full"></i>
-      <img
-        src="${item.image}"
-        alt="Mahsulot rasmi"
-        class="w-[80%] h-[80%] ml-[10%] object-cover"
-      />
-    </div>
-
-    <div class="flex flex-col flex-1 justify-between">
-      <div>
-     
-        <h3 class="text-[14px] font-medium text-gray-800 text-center">
-          ${item.name}
-        </h3>
-       
-      </div>
- <div class="flex">
-        
- <p class="text-center ml-[10%] font-semibold text-l ">
-          ${item.price} so'm
-        </p>
-        <img
-        class="w-[45px] ml-[10%] mb-[10px] color-blue  text-white rounded-lg text-sm border rounded-[50%] p-[10px]  hover:bg-blue-200 transition" src="${item.button}"
-     / >
-      </div>
-     
-       
-      
-    </div>
-  </div>
-</div>`;
+  if (exists) {
+    favorites = favorites.filter((item) => item.id !== product.id);
+    btn.querySelector('i').classList.remove('fa-solid', 'text-red-500');
+    btn.querySelector('i').classList.add('fa-regular', 'text-gray-400');
+    showToast(`${product.name} yoqtirishdan olib tashlandi 💔`);
+  } else {
+    favorites.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      img: product.image || product.img,
     });
-  })
-  .catch((error) => console.log('xato', error));
+    btn.querySelector('i').classList.remove('fa-regular', 'text-gray-400');
+    btn.querySelector('i').classList.add('fa-solid', 'text-red-500');
+    showToast(`${product.name} yoqtirildi ❤️`);
+  }
 
-fetch('https://6905e8e9ee3d0d14c1341a42.mockapi.io/api/stat')
-  .then((res) => res.json())
-  .then((data2) => console.log(data2));
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.className =
+    'fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow opacity-0 transition';
+  document.body.appendChild(t);
+  setTimeout(() => (t.style.opacity = 1), 100);
+  setTimeout(() => {
+    t.style.opacity = 0;
+    setTimeout(() => t.remove(), 500);
+  }, 2000);
+}
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const total = cart.reduce((a, c) => a + c.quantity, 0);
+  const counter = document.querySelector('.cart-count');
+  if (counter) counter.textContent = total;
+}
+async function init() {
+  for (const section of sections) {
+    const products = await fetchProducts(section.url);
+    renderProducts(section.container, products);
+  }
+  updateCartCount();
+}
 
-const stat = document.querySelector('.stat');
-
-fetch('https://6905e8e9ee3d0d14c1341a42.mockapi.io/api/stat')
-  .then((res) => res.json())
-  .then((data2) => {
-    stat.innerHTML = data2
-      .map(
-        (item) => `
-      <div class="bg-white rounded-[2px] overflow-hidden shadow hover:shadow-lg transition">
-        <div class="w-full h-[203px] bg-gray-200">
-          <img src="${item.image}" alt="" class="w-full h-full object-cover" />
-        </div>
-        <div class="">
-          <p class="text-sm text-gray-500 mb-1">${item.data}</p>
-          <h3 class="text-base p-[2%] font-semibold leading-snug hover:text-blue-600 cursor-pointer">
-            ${item.name}
-          </h3>
-        </div>
-      </div>
-    `
-      )
-      .join('');
-  })
-  .catch((error) => console.log('xato', error));
+init();

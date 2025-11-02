@@ -11,160 +11,102 @@
     />
   </head>
   <body>
-    <div class="w-full border-b text-sm text-gray-600">
+    <header
+      class="w-full border-b text-sm text-gray-600 fixed top-0 left-0 bg-white z-50"
+    >
       <div
-        class="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-4 py-2"
-      >
-        <div class="flex flex-wrap items-center gap-4">
-          <div class="flex items-center gap-1">
-            <span>Город</span>
-            <a href="./admin.html" class="text-blue-600 hover:underline"
-              >Ташкент</a
-            >
-            <a href="./basket.html" class="text-blue-600 hover:underline"
-              >Ташкент</a
-            ><a href="./like.html" class="text-blue-600 hover:underline"
-              >Ташкент</a
-            >
-          </div>
-
-          <a
-            href="#"
-            class="text-blue-600 hover:underline flex items-center gap-1"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-4 h-4"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M8.25 3v2.25M15.75 3v2.25M3 7.5h18M4.5 21h15A1.5 1.5 0 0021 19.5V7.5H3v12A1.5 1.5 0 004.5 21z"
-              />
-            </svg>
-            Продавайте на Zon.uz
-          </a>
-
-          <div class="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-4 h-4"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 13.5V9a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4.5M6 19.5h12a2.25 2.25 0 0 0 2.25-2.25V9.75A2.25 2.25 0 0 0 18 7.5H6a2.25 2.25 0 0 0-2.25 2.25v7.5A2.25 2.25 0 0 0 6 19.5z"
-              />
-            </svg>
-            <span>Покупать как юрлицо</span>
-          </div>
-
-          <div class="hidden md:flex items-center gap-2">
-            <a href="#" class="hover:text-blue-600">Помощь</a>
-            <a href="#" class="hover:text-blue-600">Контакты</a>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-4 h-4 text-blue-600"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 6.75l8.954 4.905a2.25 2.25 0 002.092 0L22.25 6.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25v-9A2.25 2.25 0 0019.5 6h-15A2.25 2.25 0 002.25 8.25v9A2.25 2.25 0 004.5 19.5z"
-            />
-          </svg>
-          <a
-            href="tel:+998785553500"
-            class="text-gray-800 font-medium hover:text-blue-600"
-            >+998-78 555-35-00</a
-          >
-        </div>
-      </div>
-    </div>
-
-    <nav class="w-full">
-      <div
-        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 gap-4 flex-wrap md:flex-nowrap"
+        class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3"
       >
         <div class="flex items-center gap-4">
-          <a href="./index.html"
-            ><img src="./image/zon.uz.png" alt="Logo" class="h-8"
-          /></a>
+          <a href="./index.html" class="flex items-center gap-2">
+            <img src="./image/zon.uz.png" alt="Logo" class="h-8" />
+          </a>
           <button
-            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm hover:bg-blue-100"
+            class="hidden md:flex items-center gap-2 border px-4 py-2 rounded-lg text-sm hover:bg-blue-100"
           >
-            <span><img src="./image/katalog.png" alt="" /></span>Каталог
+            <img src="./image/katalog.png" alt="katalog" class="w-4" />
+            Каталог
           </button>
         </div>
-
-        <div class="flex-1 flex items-center max-w-3xl w-full">
+        <div class="hidden md:flex flex-1 items-center max-w-3xl mx-6">
           <input
             type="text"
             placeholder="Найти товары"
-            class="flex-1 px-4 py-2 rounded-l-[10px] text-sm text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="flex-1 px-4 py-2 rounded-l-lg text-sm text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
-            class="bg-gray-300 text-gray-700 px-4 py-[7px] mb-[-1px] rounded-r-lg hover:bg-gray-400"
+            class="bg-gray-300 text-gray-700 px-4 py-[7px] rounded-r-lg hover:bg-gray-400"
           >
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
-
-        <div class="flex items-center gap-4">
-          <button class="relative hover:text-blue-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 2.25h2.25l1.5 12.75h13.5l1.5-9H6M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-              />
-            </svg>
-          </button>
-
-          <div class="flex items-center gap-3 text-gray-400">
-            <div class="bg-">
-              <i class="fa-solid text-black fa-earth-americas"> RU</i>
-            </div>
-            <div class="">
-              <i class="fa-regular color-black fa-question"></i>
-            </div>
-            <div class="">
-              <img src="./image/Item menu.svg" alt="" />
-            </div>
-          </div>
-
+        <div class="hidden md:flex items-center gap-4">
+          <a href="./basket.html" class="hover:text-blue-500">
+            <i class="fa-solid fa-cart-shopping text-lg"></i>
+          </a>
+          <a href="./like.html" class="hover:text-blue-500">
+            <i class="fa-regular fa-heart text-lg"></i>
+          </a>
           <button
             class="bg-[#4668FF] hover:bg-[#3350e0] text-white px-4 py-2 rounded-lg text-sm font-medium"
           >
             Войти
           </button>
         </div>
+        <button
+          id="menu-btn"
+          class="md:hidden text-gray-700 text-2xl focus:outline-none"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </nav>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-gray-50 border-t border-gray-200 shadow-lg transition-all duration-300"
+      >
+        <div class="px-4 py-4 space-y-4">
+          <div class="flex">
+            <input
+              type="text"
+              placeholder="Поиск..."
+              class="flex-1 px-3 py-2 rounded-l-md border border-gray-300 text-sm"
+            />
+            <button
+              class="bg-gray-300 text-gray-700 px-4 py-[7px] rounded-r-md hover:bg-gray-400"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <a
+            href="#"
+            class="block border rounded-lg px-4 py-2 text-center hover:bg-blue-100"
+            >Каталог</a
+          >
 
-    <section class="max-w-7xl mx-auto mt-5 px-4">
+          <div class="flex justify-around text-gray-700 text-lg mt-2">
+            <a href="#" class="flex flex-col items-center hover:text-blue-500">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="text-xs mt-1">Savatcha</span>
+            </a>
+            <a href="#" class="flex flex-col items-center hover:text-blue-500">
+              <i class="fa-regular fa-heart"></i>
+              <span class="text-xs mt-1">Sevimli</span>
+            </a>
+            <a href="#" class="flex flex-col items-center hover:text-blue-500">
+              <i class="fa-solid fa-user"></i>
+              <span class="text-xs mt-1">Admin panel</span>
+            </a>
+          </div>
+
+          <button
+            class="w-full bg-[#4668FF] hover:bg-[#3350e0] text-white py-2 rounded-md font-medium"
+          >
+            Войти
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="max-w-7xl pt-[50px] mx-auto mt-5 px-4">
       <div class="relative rounded-xl overflow-hidden">
         <img src="./image/hero.png" alt="Banner" class="w-full object-cover" />
         <div
@@ -230,23 +172,53 @@
         class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[5px] w-full"
       ></div>
     </section>
+    <main class="w-full">
+      <div class="container mx-auto sm:px-20 lg:px-32 py-2">
+        <section class="bestseller mb-2">
+          <h3 class="text-xl font-semibold mb-4"></h3>
 
-    <section class="max-w-7xl mx-auto mt-10 px-4">
-      <h3 class="text-xl font-semibold mb-4">Бестселлеры</h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 bnn"
+          ></div>
+        </section>
+        <section class="popular mb-2">
+          <h3 class="text-xl font-semibold mb-4">Бестселлеры</h3>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 bestseller-container"
+          ></div>
+        </section>
+        <section class="bestseller mb-2">
+          <h3 class="text-xl font-semibold mb-4">Новинки</h3>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 popular-container"
+          ></div>
+        </section>
+        <section class="novinki mb-2">
+          <h3 class="text-xl font-semibold mb-4">Товары со скидкой</h3>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 novinki-container"
+          ></div>
+        </section>
+        <section class="mb-2">
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 tovar"
+          ></div>
+        </section>
+      </div>
+    </main>
+    <section class="container mx-auto sm:px-20 lg:px-32 py-2 mb-2">
+      <h3 class="text-xl font-semibold mb-4">Товары со скидкой</h3>
+
       <div
-        class="card30 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[5px] w-full"
+        class="stat grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2 novinki-container"
       ></div>
     </section>
-    <section class="max-w-7xl mx-auto mt-10 px-4">
-      <h3 class="text-xl font-semibold mb-4">Новинки</h3>
+    <section class="mb-2">
       <div
-        class="novinki grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[5px] w-full"
-      ></div>
-    </section>
-    <section class="max-w-7xl mx-auto mt-10 px-4">
-      <h3 class="text-xl font-semibold mb-4">Статьи</h3>
-      <div
-        class="stat grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 w-full max-w-7xl"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 tovar"
       ></div>
     </section>
     <footer class="bg-white border-t border-gray-200 text-sm text-gray-700">
