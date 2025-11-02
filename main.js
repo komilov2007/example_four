@@ -162,7 +162,7 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden'); // menyuni ko‘rsatish / yashirish
+    mobileMenu.classList.toggle('hidden');
 
     const icon = menuBtn.querySelector('i');
     if (mobileMenu.classList.contains('hidden')) {
@@ -174,3 +174,42 @@ if (menuBtn && mobileMenu) {
     }
   });
 }
+const API_URL = 'https://6905e8e9ee3d0d14c1341a42.mockapi.io/api/stat';
+const container = document.getElementById('articles-container');
+
+async function fetchArticles() {
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    renderArticles(data);
+  } catch (err) {
+    console.error('Xatolik:', err);
+  }
+}
+
+function renderArticles(articles) {
+  container.innerHTML = '';
+  articles.forEach((a) => {
+    const card = document.createElement('div');
+    card.className =
+      'bg-white border rounded-lg overflow-hidden shadow hover:shadow-lg transition flex flex-col';
+
+    card.innerHTML = `
+      <img src="${a.image}" alt="${a.title}" class="w-full h-40 object-cover" />
+      <div class="p-3 flex-1 flex flex-col justify-between">
+        <div>
+          <p class="text-gray-500 text-xs mb-1">${a.data}</p>
+          <h3 class="font-medium text-sm mb-2 line-clamp-2">${a.name}</h3>
+        </div>
+        <a href="${
+          a.link || '#'
+        }" class="text-blue-600 text-sm hover:underline mt-auto">
+          Читать →
+        </a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+fetchArticles();

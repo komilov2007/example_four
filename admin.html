@@ -154,6 +154,66 @@
         </div>
       </div>
     </nav>
+
+    <header class="bg-white shadow p-4 flex justify-between items-center">
+      <h1 class="text-xl font-semibold">🛠 Admin Panel</h1>
+      <a
+        href="./index.html"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >Bosh sahifa</a
+      >
+    </header>
+
+    <main class="max-w-5xl mx-auto py-8 px-4">
+      <!-- Add new product -->
+      <section class="bg-white p-6 rounded-lg shadow mb-8">
+        <h2 class="text-lg font-semibold mb-4">➕ Yangi mahsulot qo‘shish</h2>
+        <form id="addForm" class="grid sm:grid-cols-2 gap-4">
+          <input
+            type="text"
+            id="name"
+            placeholder="Mahsulot nomi"
+            class="border rounded px-3 py-2"
+            required
+          />
+          <input
+            type="number"
+            id="price"
+            placeholder="Narx"
+            class="border rounded px-3 py-2"
+            required
+          />
+          <input
+            type="text"
+            id="image"
+            placeholder="Rasm URL"
+            class="border rounded px-3 py-2 sm:col-span-2"
+          />
+          <button
+            class="bg-green-600 text-white py-2 rounded hover:bg-green-700 sm:col-span-2"
+          >
+            Qo‘shish
+          </button>
+        </form>
+      </section>
+
+      <!-- Product list -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-lg font-semibold mb-4">📦 Mahsulotlar</h2>
+        <table class="w-full text-sm text-left border">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border px-3 py-2">ID</th>
+              <th class="border px-3 py-2">Nomi</th>
+              <th class="border px-3 py-2">Narx</th>
+              <th class="border px-3 py-2">Rasm</th>
+              <th class="border px-3 py-2">Amallar</th>
+            </tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+      </section>
+    </main>
     <footer class="bg-white border-t border-gray-200 text-sm text-gray-700">
       <div
         class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2"
